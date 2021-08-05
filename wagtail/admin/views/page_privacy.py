@@ -60,7 +60,9 @@ def set_privacy(request, page_id):
             request, 'wagtailadmin/page_privacy/ancestor_privacy.html', None,
             {
                 'page_with_restriction': restriction.page,
-            }
+                'page': page,
+                'form': form,
+            }, json_data={'step': 'set_privacy'}
         )
     else:
         # no restriction set at ancestor level - can set restrictions here
