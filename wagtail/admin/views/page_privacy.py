@@ -44,14 +44,13 @@ def set_privacy(request, page_id):
             )
 
     else:  # request is a GET
-        if not restriction_exists_on_ancestor:
-            if restriction:
-                form = PageViewRestrictionForm(instance=restriction)
-            else:
-                # no current view restrictions on this page
-                form = PageViewRestrictionForm(initial={
-                    'restriction_type': 'none'
-                })
+        if restriction:
+            form = PageViewRestrictionForm(instance=restriction)
+        else:
+            # no current view restrictions on this page
+            form = PageViewRestrictionForm(initial={
+                'restriction_type': 'none'
+            })
 
     if restriction_exists_on_ancestor:
         # display a message indicating that there is a restriction at ancestor level -
