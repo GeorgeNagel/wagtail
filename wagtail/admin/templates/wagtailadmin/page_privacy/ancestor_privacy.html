@@ -2,6 +2,7 @@
 "wagtailadmin/shared/header.html" with title=title_str icon="no-view" %}
 
 <div class="nice-padding">
+    {{ page.title }}
     <p>{% trans "This page has been made private by a parent page." %}</p>
     <p>
         {% trans "You can edit the privacy settings on:" %}
@@ -10,7 +11,6 @@
             }}</a
         >
     </p>
-
     <p class="help-block help-warning">
         {% trans "Privacy changes apply to all children of this page too." %}
     </p>
